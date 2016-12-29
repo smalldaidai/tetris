@@ -106,6 +106,9 @@ Block = function(type,direction){
 	for(index = 0 ; index < 4 ; index++ ){
 		var rect = document.createElement("div");
 		rect.className = "block";
+
+		var subRect = document.createElement("div");
+		rect.appendChild(subRect);
 		this.rects.push(rect);
 	}
 
@@ -801,6 +804,8 @@ Game = function(container){
 			for(index = 0 ; index < needDeal.length ; index++){
 				needRefreshPosition = true;
 				var row = this.gameData[needDeal[index]];
+
+
 				//清空显示的方块
 				for(col = 0 ; col < 10 ; col++){
 					this.gameArea.removeChild(row[col]);

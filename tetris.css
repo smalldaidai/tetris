@@ -108,3 +108,17 @@ button{
     -ms-user-select:none; /*IE10*/   
     user-select:none;
 }
+
+@keyframes disapear {
+  from {
+    opacity:1;
+  }
+
+  to {
+    opacity:0;
+  }
+}
+
+.disapear {
+  animation:disapear 1s
+}

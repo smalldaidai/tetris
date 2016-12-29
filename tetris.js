@@ -805,11 +805,16 @@ Game = function(container){
 				needRefreshPosition = true;
 				var row = this.gameData[needDeal[index]];
 
-
 				//清空显示的方块
 				for(col = 0 ; col < 10 ; col++){
-					this.gameArea.removeChild(row[col]);
+					row[col].className = row[col].className + ' disapear';
 				}
+
+				//清空显示的方块
+				
+				//for(col = 0 ; col < 10 ; col++){
+				//	this.gameArea.removeChild(row[col]);
+				//}
 				//清空数组中的数据
 				this.gameData.splice(needDeal[index],1);
 				//向数组头部插入一条数据
@@ -819,7 +824,16 @@ Game = function(container){
 
 			if(needRefreshPosition){
 				var maxRow = needDeal[needDeal.length - 1];
+				
+				window.setTimeout(function(){
+				for(index = 0 ; index < needDeal.length ; index++){
+					for(col = 0 ; col < 10 ; col++){
+						this.gameArea.removeChild(row[col]);
+					}
+				}
 				this.refreshPosition(maxRow);
+			}.bind(this),1000);
+
 				//记分
 				this.score = this.score + SCORE_ARRAY[needDeal.length];
 				this.refreshScore();

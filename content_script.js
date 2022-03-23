@@ -87,7 +87,7 @@ var init = function(){
 					}
 
 					var userId = data.data[0].id;
-
+					$("#user_name_append").val(data.data[0].attributes["user-name"]);
 					getCount(userId,"https://www.elevenvr.club/accounts/" + userId + "/matches/ranked",count);
 				});
 		}

@@ -87,8 +87,23 @@ var init = function(){
 						return;
 					}
 
-					var userId = data.data[0].id;
-					$("#user_name_append").val(data.data[0].attributes["user-name"]);
+					var matchedUser;
+					for(index=0;index<data.data.length;index++){
+						var user = data.data[index];
+						if(userName.toLowerCase() == user.attributes["user-name"].toLowerCase()){
+							matchedUser = user;
+							break;
+						}
+					}
+					if(!matchedUser){
+						alert("未匹配到用户:" + userName);
+						return;
+					}
+
+
+					$("#user_name_append").val(userName);
+					var userId = matchedUser.id;
+
 					getCount(userId,"https://www.elevenvr.club/accounts/" + userId + "/matches/ranked",count);
 				});
 		}

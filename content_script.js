@@ -90,7 +90,7 @@ var init = function(){
 					var matchedUser;
 					for(index=0;index<data.data.length;index++){
 						var user = data.data[index];
-						if(userName.toLowerCase() == user.attributes["user-name"].toLowerCase()){
+						if(userName == user.attributes["user-name"]){
 							matchedUser = user;
 							break;
 						}

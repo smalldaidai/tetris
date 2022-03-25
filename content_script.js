@@ -64,7 +64,7 @@ var init = function(){
 		$("<button>").text("确定").click(
 		function(){
 			$("div").remove();
-			$("body").append($("<DIV>").attr("id","content").text("查询中......"));
+			$("body").append($("<DIV>").attr("id","content").text("查询中"));
 			var count = 0;
 			var userName = $("#user_name_append").val() || '';
 			userName = $.trim(userName);

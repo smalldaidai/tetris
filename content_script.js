@@ -1,5 +1,5 @@
-var startDate = Date.parse("2022-03-21 11:00:00");
-var endDate = Date.parse("2022-03-28 11:00:00");
+var startDate = Date.parse("2022-05-26 00:00:00");
+var endDate = Date.parse("2022-06-07 23:59:59");
 
 var getCount = function(userId){
 	$("DIV").remove();
@@ -37,7 +37,7 @@ var getCount = function(userId){
 }
 
 var result = function(count){
-	$("#content").text("从2022-03-21 11:00:00至2022-03-28 11:00:00间的胜场数为");
+	$("#content").text("从2022-05-26 00:00:00至2022-06-07 23:59:59间的胜场数为");
 	$("#content").after($("<DIV>").css({fontSize: "50px"}).text(count));
 }
 

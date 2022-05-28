@@ -108,22 +108,25 @@ var init = function(){
 						alert("未匹配到用户:" + userName);
 						return;
 					}
-
+					try{
 					if(localStorage){
 						var userInfo = {};
 						userInfo.name = userName;
 						userInfo.id = matchedUser.id;
 						localStorage.user = JSON.stringify(userInfo);
+					}}catch(e){
 					}
 					getCount(matchedUser.id);					
 
 				});
 		}
 	));
+	try{
 	if(localStorage && localStorage.user){
 		var userInfo = JSON.parse(localStorage.user);
 		$("#user_name_append").val(userInfo.name);
 		getCount(userInfo.id);
+	}}catch(e){
 	}
 }
 
